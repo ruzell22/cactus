@@ -23,6 +23,7 @@ import {
   ConsortiumMember,
 } from "@hyperledger/cactus-core-api";
 import { PluginRegistry } from "@hyperledger/cactus-core";
+import { AxiosError } from "axios";
 
 const testCase = "cactus-plugin-consortium-manual API";
 
@@ -290,15 +291,22 @@ test(testCase, async (t: Test) => {
     const api = new DefaultApi(configuration);
     try {
       await api.getNodeJwsV1({ fake: 4 });
-    } catch (e) {
+    } catch (err) {
+      const e = err as AxiosError<{ path: string }[]>;
       t2.equal(
-        e.response.status,
+        e?.response?.status,
         400,
         `Endpoint ${fGetNodeJwt} with fake=4: response.status === 400 OK`,
       );
-      const fields = e.response.data.map((param: any) =>
+<<<<<<< HEAD
+      const fields = e.response.data.map((param: { path: string }) =>
         param.path.replace(".body.", ""),
       );
+=======
+      const fields =
+        e?.response?.data.map((param) => param.path.replace(".body.", "")) ||
+        [];
+>>>>>>> 63158878... style: 2021-09-20 linter warnings batch 21/26
       t2.ok(
         fields.includes("fake"),
         "Rejected because fake is not a valid parameter",
@@ -313,15 +321,22 @@ test(testCase, async (t: Test) => {
     const api = new DefaultApi(configuration);
     try {
       await api.getConsortiumJwsV1({ fake: 4 });
-    } catch (e) {
+    } catch (err) {
+      const e = err as AxiosError<{ path: string }[]>;
       t2.equal(
-        e.response.status,
+        e?.response?.status,
         400,
         `Endpoint ${fGetConsortiumJws} with fake=4: response.status === 400 OK`,
       );
-      const fields = e.response.data.map((param: any) =>
+<<<<<<< HEAD
+      const fields = e.response.data.map((param: { path: string }) =>
         param.path.replace(".body.", ""),
       );
+=======
+      const fields =
+        e?.response?.data.map((param) => param.path.replace(".body.", "")) ||
+        [];
+>>>>>>> 63158878... style: 2021-09-20 linter warnings batch 21/26
       t2.ok(
         fields.includes("fake"),
         "Rejected because fake is not a valid parameter",
