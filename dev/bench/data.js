@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1704264373154,
+  "lastUpdate": 1704348783205,
   "repoUrl": "https://github.com/ruzell22/cactus",
   "entries": {
     "Benchmark": [
@@ -136,6 +136,40 @@ window.BENCHMARK_DATA = {
             "range": "±0.75%",
             "unit": "ops/sec",
             "extra": "98 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "ruzell22",
+            "username": "ruzell22"
+          },
+          "committer": {
+            "name": "ruzell22",
+            "username": "ruzell22"
+          },
+          "id": "2ac1de5235cb1c7f316100ddf24d8505ccc7db4f",
+          "message": "Jmeterbenchmark",
+          "timestamp": "2022-01-17T07:08:58Z",
+          "url": "https://github.com/ruzell22/cactus/pull/1/commits/2ac1de5235cb1c7f316100ddf24d8505ccc7db4f"
+        },
+        "date": 1704348781688,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "fib(10)",
+            "value": 1635840,
+            "range": "±0.29%",
+            "unit": "ops/sec",
+            "extra": "93 samples"
+          },
+          {
+            "name": "fib(20)",
+            "value": 13269,
+            "range": "±1.20%",
+            "unit": "ops/sec",
+            "extra": "95 samples"
           }
         ]
       }
