@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722305556550,
+  "lastUpdate": 1722306409206,
   "repoUrl": "https://github.com/ruzell22/cactus",
   "entries": {
     "Benchmark": [
@@ -257,6 +257,37 @@ window.BENCHMARK_DATA = {
             "name": "cmd-api-server_gRPC_GetOpenApiSpecV1",
             "value": 338,
             "range": "±1.49%",
+            "unit": "ops/sec",
+            "extra": "178 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jagpreet.singh.sasan@accenture.com",
+            "name": "jagpreetsinghsasan",
+            "username": "jagpreetsinghsasan"
+          },
+          "committer": {
+            "email": "petermetz@users.noreply.github.com",
+            "name": "Peter Somogyvari",
+            "username": "petermetz"
+          },
+          "distinct": true,
+          "id": "9c4d9be8ac7a1608bf15cbaf887ed0836c02f747",
+          "message": "build(api-client): generate go client\n\n    Primary Changes\n    ----------------\n    1. Updated package.json file for packages to\n       include the new codegen script\n    2. Added a new dep, replace for string\n       manupulation in package.json\n\nFixes #393\n\nSigned-off-by: jagpreetsinghsasan <jagpreet.singh.sasan@accenture.com>",
+          "timestamp": "2024-07-25T14:06:22-07:00",
+          "tree_id": "4db60a87b0df4cca6a76f559d461c607d148f604",
+          "url": "https://github.com/ruzell22/cactus/commit/9c4d9be8ac7a1608bf15cbaf887ed0836c02f747"
+        },
+        "date": 1722306406515,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "plugin-ledger-connector-besu_HTTP_GET_getOpenApiSpecV1",
+            "value": 687,
+            "range": "±2.85%",
             "unit": "ops/sec",
             "extra": "178 samples"
           }
