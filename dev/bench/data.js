@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722913944937,
+  "lastUpdate": 1723700013503,
   "repoUrl": "https://github.com/ruzell22/cactus",
   "entries": {
     "Benchmark": [
@@ -328,6 +328,44 @@ window.BENCHMARK_DATA = {
             "range": "±1.36%",
             "unit": "ops/sec",
             "extra": "181 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sandeep.nishad1@ibm.com",
+            "name": "Sandeep Nishad",
+            "username": "sandeepnRES"
+          },
+          "committer": {
+            "email": "sandeepn.official@gmail.com",
+            "name": "Sandeep Nishad",
+            "username": "sandeepnRES"
+          },
+          "distinct": true,
+          "id": "30cde8bc3b1b1ca9ba7ebe1eb6e3d181551df0a8",
+          "message": "chore: updating golang version in docs, and proto-grpc dependencies\n\nSigned-off-by: Sandeep Nishad <sandeep.nishad1@ibm.com>",
+          "timestamp": "2024-08-15T01:03:09+05:30",
+          "tree_id": "9ddb9aef4da5f33d5a7f1d46c68186b4551febc7",
+          "url": "https://github.com/ruzell22/cactus/commit/30cde8bc3b1b1ca9ba7ebe1eb6e3d181551df0a8"
+        },
+        "date": 1723700010873,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "cmd-api-server_HTTP_GET_getOpenApiSpecV1",
+            "value": 586,
+            "range": "±1.56%",
+            "unit": "ops/sec",
+            "extra": "178 samples"
+          },
+          {
+            "name": "cmd-api-server_gRPC_GetOpenApiSpecV1",
+            "value": 335,
+            "range": "±2.34%",
+            "unit": "ops/sec",
+            "extra": "180 samples"
           }
         ]
       }
