@@ -90,11 +90,19 @@ export class RunTransactionEndpoint implements IWebServiceEndpoint {
       const resBody = await this.options.connector.transact(reqBody);
       res.json({ success: true, data: resBody });
     } catch (ex) {
-      this.log.error(`Crash while serving ${reqTag}`, ex);
-      res.status(500).json({
-        message: "Internal Server Error",
-        error: ex?.stack || ex?.message,
-      });
+      if ((ex?.message as string).includes("connection not open on send")) {
+        this.log.error(`Crash while serving ${reqTag}`, ex);
+        res.status(503).json({
+          message: "Backing Ledger Unavailable Error",
+          error: ex?.stack || ex?.message,
+        });
+      } else {
+        this.log.error(`Crash while serving ${reqTag}`, ex);
+        res.status(500).json({
+          message: "Internal Server Error",
+          error: ex?.stack || ex?.message,
+        });
+      }
     }
   }
 }
