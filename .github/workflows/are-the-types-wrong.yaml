@@ -21,4 +21,4 @@ jobs:
       - name: Installing Library
         run: npm i -g @arethetypeswrong/cli
       - name: Building and running the scan
-        run: yarn are-the-types-wrong
+        run: TS_NODE_PROJECT=./tools/tsconfig.json node --trace-deprecation --experimental-modules --abort-on-uncaught-exception --loader ts-node/esm --experimental-specifier-resolution=node ./tools/custom-checks/run-attw-on-tgz.ts
