@@ -35,5 +35,4 @@ jobs:
             ${{ runner.os }}-yarn-${{ hashFiles('./yarn.lock') }}
       - run: ./tools/ci.sh
       - name: Running AreTheTypesWrong scan
-        # run: TS_NODE_PROJECT=./tools/tsconfig.json node --trace-deprecation --experimental-modules --abort-on-uncaught-exception --loader ts-node/esm --experimental-specifier-resolution=node ./tools/custom-checks/run-attw-on-tgz.ts
         run: yarn run are-the-types-wrong
