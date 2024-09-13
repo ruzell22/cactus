@@ -1,0 +1,24 @@
+name: AreTheTypesWrong scan
+
+on: 
+  push:
+    # Publish `main` as Docker `latest` image.
+    branches:
+      - main
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  scanning:
+    name: AreTheTypesWrong scan
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Installing Library
+        run: npm i -g @arethetypeswrong/cli
+      - name: Building and running the scan
+        run: yarn are-the-types-wrong
