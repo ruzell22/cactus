@@ -18,8 +18,6 @@ jobs:
     name: AreTheTypesWrong scan
     runs-on: ubuntu-22.04
     steps:
-      - name: Installing AreTheTypesWrong Library
-        run: npm i -g @arethetypeswrong/cli
       - name: Use Node.js ${{ env.NODEJS_VERSION }}
         uses: actions/setup-node@v4.0.3
         with:
@@ -34,5 +32,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-${{ hashFiles('./yarn.lock') }}
       - run: ./tools/ci.sh
+      - name: Installing AreTheTypesWrong Library
+        run: npm i -g @arethetypeswrong/cli
       - name: Running AreTheTypesWrong scan
         run: yarn run are-the-types-wrong
