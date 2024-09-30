@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727710139119,
+  "lastUpdate": 1727711037085,
   "repoUrl": "https://github.com/ruzell22/cactus",
   "entries": {
     "Benchmark": [
@@ -504,6 +504,37 @@ window.BENCHMARK_DATA = {
             "range": "±2.64%",
             "unit": "ops/sec",
             "extra": "181 samples"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "peter.somogyvari@accenture.com",
+            "name": "Peter Somogyvari",
+            "username": "petermetz"
+          },
+          "committer": {
+            "email": "petermetz@users.noreply.github.com",
+            "name": "Peter Somogyvari",
+            "username": "petermetz"
+          },
+          "distinct": true,
+          "id": "499f70302ca55c51f61f46abc3da8403c404409b",
+          "message": "test(test-cmd-api-server): jestify plugin-import-with-npm-install-version\n\nSigned-off-by: Peter Somogyvari <peter.somogyvari@accenture.com>",
+          "timestamp": "2024-09-30T08:03:18-07:00",
+          "tree_id": "8733afe1418da46c45b321ab2c1c4f04013e7bfe",
+          "url": "https://github.com/ruzell22/cactus/commit/499f70302ca55c51f61f46abc3da8403c404409b"
+        },
+        "date": 1727711034409,
+        "tool": "benchmarkjs",
+        "benches": [
+          {
+            "name": "plugin-ledger-connector-besu_HTTP_GET_getOpenApiSpecV1",
+            "value": 716,
+            "range": "±2.58%",
+            "unit": "ops/sec",
+            "extra": "179 samples"
           }
         ]
       }
