@@ -31,7 +31,7 @@ jobs:
           path: ./.yarn/
           restore-keys: |
             ${{ runner.os }}-yarn-${{ hashFiles('./yarn.lock') }}
-      - run: ./tools/ci.sh
+      - run: npm run configure
       - name: Installing AreTheTypesWrong Library
         run: npm i -g @arethetypeswrong/cli
       - name: Running AreTheTypesWrong scan
