@@ -1,0 +1,44 @@
+name: AreTheTypesWrong scan
+
+env:
+  NODEJS_VERSION: v18.18.2
+
+on: 
+  push:
+    # Publish `main` as Docker `latest` image.
+    branches:
+      - main
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  scanning:
+    name: AreTheTypesWrong scan
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install Indy SDK
+        run: >
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CE7709D068DB5E88 \
+            && sudo add-apt-repository "deb https://repo.sovrin.org/sdk/deb bionic stable" \
+            && sudo apt-get update \
+            && sudo apt-get install -y \
+                libindy \
+                libnullpay \
+                libvcx \
+                indy-cli \
+            && sudo rm -f /etc/apt/sources.list.d/sovrin.list*
+      - name: Set up NodeJS ${{ env.NODEJS_VERSION }}
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: ${{ env.NODEJS_VERSION }}
+      - uses: actions/checkout@v4.1.7
+      - name: Installing AreTheTypesWrong Library
+        run: npm i -g @arethetypeswrong/cli
+      - run: npm run configure
+      - name: Running AreTheTypesWrong scan
+        run: yarn run are-the-types-wrong
