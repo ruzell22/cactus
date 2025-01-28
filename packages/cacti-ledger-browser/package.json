@@ -65,7 +65,7 @@
     "react-apexcharts": "1.4.1",
     "react-dom": "18.2.0",
     "react-router-dom": "6.21.3",
-    "web3": "4.1.1"
+    "web3": "4.4.0"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "5.28.11",
